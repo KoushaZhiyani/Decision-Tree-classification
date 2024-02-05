@@ -3,7 +3,7 @@
 ##        2. max depht                                  ##
 ##        3. min_samples_leaf                           ##
 ##        4. accuracy                                   ##
-##        5.predict list                                ##
+##        5 .predict list                               ##
 ##########################################################
 import pandas as pd
 import numpy as np
