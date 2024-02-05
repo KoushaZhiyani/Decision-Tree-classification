@@ -179,7 +179,7 @@ data_test = [i for i in data_test.values]
 data_test = pd.DataFrame(data_test, columns=data.columns)
 
 # create model
-model = Decision_Tree(data_train, 'PCOS (Y/N)', max_depht=4)
+model = Decision_Tree(data_train, 'PCOS (Y/N)', max_depht=10)
 model.process_feature()
 
 # create accuracy class
