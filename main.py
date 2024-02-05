@@ -166,7 +166,7 @@ X = data.drop("PCOS (Y/N)", axis=1)
 y = data[["PCOS (Y/N)"]]
 
 # specify train and test data
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.025, random_state=1)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
 
 # create data train
 data_train = pd.concat([X_train, y_train], axis=1)
