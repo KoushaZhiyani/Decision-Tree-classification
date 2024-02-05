@@ -1,3 +1,10 @@
+##########################################################
+##        1. DecisionTreeClassifier                     ##
+##        2. max depht                                  ##
+##        3. min_samples_leaf                           ##
+##        4. accuracy                                   ##
+##        5.predict list                                ##
+##########################################################
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
