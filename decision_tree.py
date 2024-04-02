@@ -5,9 +5,8 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-
 class Decision_Tree:
-    def __init__(self, min_sample=1, max_depht=10, depth=0):
+    def __init__(self, min_sample=1, max_depht=None, depth=0):
         self.data = None  # data
         self.target_data = None  # target feature
 
@@ -32,9 +31,14 @@ class Decision_Tree:
         self.target_data = y_tr
         self.columns = self.data.columns
         self.find_classes()
-        if (self.depth > self.max_depht - 1 and self.max_depht != -1) or self.is_leaf() == 0:
-            self.leaf = True
-            return
+        if self.max_depht is not None:
+            if (self.depth > self.max_depht - 1 and self.max_depht != -1) or self.is_leaf() == 0:
+                self.leaf = True
+                return
+        else:
+            if self.is_leaf() == 0:
+                self.leaf = True
+                return
 
         self.gini_list = []
         for i in self.data.columns:
@@ -49,7 +53,9 @@ class Decision_Tree:
 
     # Get the size of two Nodes
     def find_classes(self):
+
         for i in self.target_data.iloc:
+
             if i[0] not in self.classes:
                 self.classes.append(i[0])
         self.classes.sort()
